@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pixel Classroom - 12QT1</title>
+<style>
+  body {
+    margin: 0;
+    background: #3a352c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: monospace;
+    overflow: hidden;
+  }
+
+  .menu { position: absolute; top: 20px; left: 20px; z-index: 5; }
+  .menu a {
+    display: block;
+    background: #f5ecd9;
+    border: 3px solid #000;
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 4px 4px 0 #000;
+  }
+  .menu a:active { transform: translate(4px, 4px); box-shadow: 0 0 0; }
+
+  .room {
+    background: #f5ecd9;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border: 5px solid #000;
+  }
+
+  .board {
+    width: 150px;
+    height: 50px;
+    background: #2f5d50;
+    border: 4px solid #6b4f2a;
+    position: absolute;
+    top: 30px;
+    left: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .teacher {
+    width: 65px;
+    height: 32px;
+    background: #b07d4f;
+    border: 3px solid #000;
+    position: absolute;
+    top: 100px;
+    left: 168px;
+  }
+
+  .desks {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    gap: 15px;
+  }
+
+  .desk {
+    width: 52px;
+    height: 32px;
+    background: #c28b5a;
+    border: 3px solid #000;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000;
+    position: relative;
+  }
+  .desk:active { transform: translate(3px, 3px); box-shadow: 0 0 0; }
+
+  .desk::after {
+    content: "";
+    width: 40px;
+    height: 12px;
+    background: #8b5a2b;
+    position: absolute;
+    bottom: -12px;
+    left: 4px;
+    border: 3px solid #000;
+  }
+
+  .desks .desk:nth-child(13) { grid-column: 2; }
+  .desks .desk:nth-child(14) { grid-column: 3; }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .overlay img {
+    max-width: 60%;
+    max-height: 70vh;
+    
+    border: 4px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <a href="main menu.html">Trang chủ</a>
+  <a href="gioi thieu.html">Giới thiệu</a>
+  <a href="lien he.html">Liên hệ</a>
+</div>
+
+<div class="room">
+  <a href="form.html"><div class="board">12QT1</div></a>
+  <div class="teacher"></div>
+  <div class="desks">
+    <div class="desk" onclick="zoom('Thùy Anh.jpg')"></div>
+    <div class="desk" onclick="zoom('thaonguyen.jpg')"></div>
+    <div class="desk" onclick="zoom('Hà Phương.jpg')"></div>
+    <div class="desk" onclick="zoom('Ngân Chung.jpeg')"></div>
+    <div class="desk" onclick="zoom('Lê Thị Minh Châu.jpg')"></div>
+    <div class="desk" onclick="zoom('pht2.jpg')"></div>
+    <div class="desk" onclick="zoom('kv.jpg')"></div>
+    <div class="desk" onclick="zoom('Kim Ngân.jpg')"></div>
+    <div class="desk" onclick="zoom('cc.jpg')"></div>
+    <div class="desk" onclick="zoom('Hà Linh.jpg')"></div>
+    <div class="desk" onclick="zoom('glinh.jpg')"></div>
+    <div class="desk" onclick="zoom('2405437622285272985.jpg')"></div>
+    <div class="desk" onclick="zoom('IMG_20260405_011956.jpg')"></div>
+    <div class="desk" onclick="zoom('IMG_20260405_011946.jpg')"></div>
+  </div>
+</div>
+
+<div class="overlay" onclick="this.style.display='none'">
+  <img id="zoomedImg">
+</div>
+
+<script>
+function zoom(src){
+  document.getElementById("zoomedImg").src = src;
+  document.querySelector(".overlay").style.display = "flex";
+}
+</script>
+
+</body>
+</html>

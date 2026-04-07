@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đăng nhập 12QT1</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3a352c;
+    font-family: monospace;
+  }
+  .login-box {
+    background: #f5ecd9;
+    padding: 30px;
+    width: 300px;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  .info-hint {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #e8dfc8;
+    border: 1px dashed #000;
+    text-align: left;
+  }
+  input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid #000;
+    background: #f7f0df;
+  }
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #c28b5a;
+    border: 3px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+    font-family: monospace;
+  }
+
+  button:active {
+    box-shadow: 0 0 0;
+    transform: translate(4px, 4px);
+  }
+
+  .error { color: red; margin-top: 10px; }
+</style>
+</head>
+
+<body>
+  <div class="login-box">
+    <h2>ĐĂNG NHẬP</h2>
+    
+    <div class="info-hint">
+      Tên người dùng: 12QT1<br>
+      Mật khẩu: K58
+    </div>
+
+    <input type="text" id="u" placeholder="Tên đăng nhập">
+    <input type="password" id="p" placeholder="Mật khẩu">
+    <button onclick="check()">ĐĂNG NHẬP</button>
+    <p class="error" id="err"></p>
+  </div>
+
+  <script>
+    function check() {
+      var user = document.getElementById("u").value;
+      var pass = document.getElementById("p").value;
+
+      if (user === "12QT1" && pass === "K58") {
+        alert("Thành công!");
+        window.location.href = "main menu.html";
+      } else {
+        document.getElementById("err").innerText = "Sai tài khoản hoặc mật khẩu!";
+      }
+    }
+  </script>
+</body>
+</html>

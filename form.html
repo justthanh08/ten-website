@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pixel Graduation Letter</title>
+<style>
+body{
+  margin:0;
+  background:linear-gradient(#3a352c,#1f1c17);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:monospace;
+}
+
+.form-box{
+  background:linear-gradient(#f5ecd9,#e8dcc5,#d8c9ad);
+  padding:15px;
+  width:230px;
+  border:4px solid #000;
+  box-shadow:8px 8px 0 #000;
+}
+
+textarea{
+  width: 90%;
+  height:80px;
+  border:3px solid #000;
+  background:#f7f0df;
+  font-size:12px;
+  resize:none;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+button{
+  width:100%;
+  padding:10px;
+  border:3px solid #000;
+  background:#c28b5a;
+  cursor:pointer;
+  font-size:14px;
+  font-weight: bold;
+  font-family: monospace;
+  box-shadow: 4px 4px 0px #000;
+  transition: 0.1s;
+}
+
+button:hover{
+  background:#d9a066;
+}
+
+button:active{
+  box-shadow: 0px 0px 0px #000;
+  transform: translate(4px, 4px);
+}
+</style>
+</head>
+<body>
+
+<div class="form-box">
+  <form action="main menu.html">
+    <textarea name="letter" placeholder="Viết lời chúc của bạn..." required></textarea>
+    <button type="submit">GỬI ĐI</button>
+  </form>
+</div>
+
+</body>
+</html>
